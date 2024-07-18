@@ -87,7 +87,7 @@ export default function App() {
       </table>
       <div className='m-auto'>
         <LineChart
-          width={500}
+          width={1150}
           height={300}
           data={chartData}
           margin={{
