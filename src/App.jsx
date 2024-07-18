@@ -13,12 +13,14 @@ export default function App() {
   const [search, setSearch] = useState('');
 
 
-  async function getData() {
-    let customersResponse = await axios.get('https://m-khairy-b.github.io/api/data-customers.json').catch((response) => response).then((err) => err)
-    console.log(customersResponse);
-    setCustomers(customersResponse.data.customers);
-    setTransactions(customersResponse.data.transactions);
-    setFilter(customersResponse.data.transactions);
+  function getData() {
+    axios.get('https://m-khairy-b.github.io/api/data-customers.json')
+      .then((response) => {
+        setCustomers(response.data.customers)
+        setTransactions(response.data.transactions)
+        setFilter(response.data.transactions)
+      })
+      .catch((err) => err)
   };
 
   function handleSearch(e) {
