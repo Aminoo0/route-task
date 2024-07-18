@@ -14,8 +14,8 @@ export default function App() {
 
 
   async function getData() {
-    let customersResponse = await axios.get('http://localhost:8100/customers').catch((response) => response).then((err) => err)
-    // console.log(customersResponse);
+    let customersResponse = await axios.get('https://m-khairy-b.github.io/api/data-customers.json').catch((response) => response).then((err) => err)
+    console.log(customersResponse);
     setCustomers(customersResponse.data);
     let transactionsResponse = await axios.get('http://localhost:8100/transactions').catch((response) => response).then((err) => err)
     // console.log(transactionsResponse);
